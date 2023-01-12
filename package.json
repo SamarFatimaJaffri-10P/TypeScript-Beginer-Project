@@ -1,0 +1,23 @@
+{
+  "name": "typescript-beginer-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamarFatimaJaffri-10P/TypeScript-Beginer-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamarFatimaJaffri-10P/TypeScript-Beginer-Project/issues"
+  },
+  "homepage": "https://github.com/SamarFatimaJaffri-10P/TypeScript-Beginer-Project#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
