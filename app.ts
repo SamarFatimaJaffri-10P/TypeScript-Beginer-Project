@@ -20,19 +20,32 @@ const result = add(number1, number2, printResult, resultPhrase);
  * a concrete is an object that couldn't be modified
  * Don't assign object type to an object, assign {key: type, key: type, ...}
 */
-const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: [number, string];     // this creates a tuple with fixed datatypes
-} = {
+// const person: {
+//     name: string;
+//     age: number;
+//     hobbies: string[];
+//     role: [number, string];     // this creates a tuple with fixed datatypes
+// } = {
+//     name: 'Sam',
+//     age: 22,
+//     hobbies: ['Coding', 'Learning'],
+//     role: [2, 'author'],
+// };
+
+enum Role {
+    ADMIN = 5,
+    READ_ONLY,
+    AUTHOR = 'AUTHOR',
+}
+
+const person = {
     name: 'Sam',
     age: 22,
     hobbies: ['Coding', 'Learning'],
-    role: [2, 'author'],
+    role: Role.ADMIN,
 };
 
-person.role.push('admin');  // length is not enforced in push
+// person.role.push('admin');  // length is not enforced in push
 // person.role = []         // but length is enforced here, we can't assign more or less then 2 element array
 // person.role[1] = 10;     // throws error
 
@@ -45,4 +58,8 @@ console.log(person.name);
 for (const hobby of person.hobbies) {
     // console.log(hobby.map());    // this throw the error
     console.log(hobby.toUpperCase());
+}
+
+if (person.role == 5){
+    console.log('Person is Admin!');
 }
