@@ -14,3 +14,15 @@ const printResult = true;
 const resultPhrase = 'Result is: '
 
 const result = add(number1, number2, printResult, resultPhrase);
+
+// objects
+/* if you don't mention the object type, a concrete object is created
+ * a concrete is an object that couldn't be modified
+ * Don't assign object type to an object, assign {key: type, key: type, ...}
+*/
+const person: {name: string, age: number} = {
+    name: 'Sam',
+    age: 22
+};
+
+console.log(person.name);

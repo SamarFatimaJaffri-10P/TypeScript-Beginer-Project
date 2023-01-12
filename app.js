@@ -13,3 +13,13 @@ var number2 = 2.8;
 var printResult = true;
 var resultPhrase = 'Result is: ';
 var result = add(number1, number2, printResult, resultPhrase);
+// objects
+/* if you don't mention the object type, a concrete object is created
+ * a concrete is an object that couldn't be modified
+ * Don't assign object type to an object, assign {key: type, key: type, ...}
+*/
+var person = {
+    name: 'Sam',
+    age: 22
+};
+console.log(person.name);
