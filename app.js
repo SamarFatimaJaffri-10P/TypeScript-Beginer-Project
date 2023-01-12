@@ -20,6 +20,19 @@ var result = add(number1, number2, printResult, resultPhrase);
 */
 var person = {
     name: 'Sam',
-    age: 22
+    age: 22,
+    hobbies: ['Coding', 'Learning'],
+    role: [2, 'author']
 };
+person.role.push('admin'); // length is not enforced in push
+// person.role = []         // but length is enforced here, we can't assign more or less then 2 element array
+// person.role[1] = 10;     // throws error
+// array and tuples
+var favoriteActivities;
+favoriteActivities = ['Coding', 'Learning'];
 console.log(person.name);
+for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
+    var hobby = _a[_i];
+    // console.log(hobby.map());    // this throw the error
+    console.log(hobby.toUpperCase());
+}
