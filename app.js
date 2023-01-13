@@ -1,5 +1,6 @@
-var userInput; // unknown type is better than any
-var userName;
+"use strict";
+let userInput; // unknown type is better than any
+let userName;
 userInput = 5;
 userInput = 'Max';
 // userName = userInput;   // throws error: Type 'unknown' is not assignable to type 'string'.ts(2322)
