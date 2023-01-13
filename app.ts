@@ -1,34 +1,18 @@
-function add(n1: number, n2: number) {
-    return n1 + n2;
+let userInput: unknown;     // unknown type is better than any
+let userName: string;
+
+userInput = 5;
+userInput = 'Max';
+// userName = userInput;   // throws error: Type 'unknown' is not assignable to type 'string'.ts(2322)
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
 
-function printResult(num: number): undefined {
-    /** undefined expect a return statement with no return value
-     * Use it only when you are clear that you want a function to return undefine
-     * Else void can be used instead, and it is more common practice*/
-    console.log('Result: ' + num);
-    return;
+function generateError(message: string, code: number): never {
+    /**
+     * This function just throws error and never returns anything
+     */
+    throw { message: message, errorCode: code };
 }
 
-// callback and function
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-    const result = n1+ n2;
-    cb(result);
-}
-
-printResult(add(5, 12));
-
-let combineValues: (a: number, b: number) => number;
-combineValues = add;
-// combineValues = printResult;     // throws error
-console.log(combineValues(8, 8));
-
-/**
- * Creating anonymous function by,
- * (params) => {
- *   function logic goes here ...
- * }
- */
-addAndHandle(10, 20, (result) => {
-    console.log(result);
-});
+generateError('An error occurred', 500);
