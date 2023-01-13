@@ -3,8 +3,11 @@
  * so it assumes all defaults available for the JS version specified as target
  * but if we do specify "lib" it will only take specified libraries
 */
-const button = document.querySelector('button')!;
+const button = document.querySelector('button');
 
-button.addEventListener('click', () => {
-    console.log('Button is clicked!');
-});
+// better option then ! mark which tells that we know that obj won't be not null
+if (button) {
+    button.addEventListener('click', () => {
+        console.log('Button is clicked!');
+    });
+}
