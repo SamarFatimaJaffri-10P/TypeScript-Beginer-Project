@@ -1,6 +1,5 @@
 "use strict";
-function combine(input1, input2, resultConversion // using literal types to force getting one of these strings as inputs
-) {
+function combine(input1, input2, resultConversion) {
     let result;
     if (typeof input1 == 'number' && typeof input2 == 'number') {
         result = input1 + input2;
