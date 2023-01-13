@@ -1,18 +1,10 @@
-let userInput: unknown;     // unknown type is better than any
-let userName: string;
+/** 
+ * This code works because we either haven't set "lib" key or have specified specific libraries in tsconfig
+ * so it assumes all defaults available for the JS version specified as target
+ * but if we do specify "lib" it will only take specified libraries
+*/
+const button = document.querySelector('button')!;
 
-userInput = 5;
-userInput = 'Max';
-// userName = userInput;   // throws error: Type 'unknown' is not assignable to type 'string'.ts(2322)
-if (typeof userInput === 'string') {
-    userName = userInput;
-}
-
-function generateError(message: string, code: number): never {
-    /**
-     * This function just throws error and never returns anything
-     */
-    throw { message: message, errorCode: code };
-}
-
-generateError('An error occurred', 500);
+button.addEventListener('click', () => {
+    console.log('Button is clicked!');
+});
