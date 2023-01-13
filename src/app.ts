@@ -5,9 +5,11 @@
 */
 const button = document.querySelector('button');
 
+function clickHandler(message: string) {
+    console.log('Button is clicked!', message);
+}
+
 // better option then ! mark which tells that we know that obj won't be not null
 if (button) {
-    button.addEventListener('click', () => {
-        console.log('Button is clicked!');
-    });
+    button.addEventListener('click', clickHandler.bind(null, 'Thats great!'));
 }
