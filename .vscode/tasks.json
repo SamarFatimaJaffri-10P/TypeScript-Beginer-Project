@@ -6,14 +6,44 @@
         {
             "label": "echo",
             "type": "shell",
-            "command": "echo Hello"
+            "command": "echo Hello, I am a task that will run automatically on folder open. See tasks.json for details.",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+            }
         },
         {
             "type": "npm",
             "script": "start",
             "problemMatcher": [],
             "label": "npm: start",
-            "detail": "lite-server"
-        }
+            "detail": "lite-server",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build",
+            "label": "tsc: watch - tsconfig.json",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+        },
+        {
+            "label": "Build",
+            "dependsOn": [
+                "npm: start",
+                "tsc: watch - tsconfig.json"
+            ],
+          }
     ]
 }
